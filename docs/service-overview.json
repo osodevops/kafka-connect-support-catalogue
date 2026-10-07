@@ -1,0 +1,120 @@
+{
+  "title": "Kafka Connect\nSupport and Services",
+  "subtitle": "Connector engineering. Platform expertise.\nSupport that fits your operating model.",
+  "date": "October 2026",
+  "version": "1.0",
+  "pages": [
+    {
+      "eyebrow": "01 / CONNECTOR CATALOGUE",
+      "title": "Connectors with clear ownership",
+      "intro": "Choose a maintained OSO product or agree a support scope for a selected third-party connector. Each agreement records the plugin versions, environments and responsibilities.",
+      "sections": [
+        [
+          "Salesforce | Source and sink",
+          "OSO-maintained, Apache 2.0. Pub/Sub CDC and Platform Event ingestion, Bulk API backfill, SObject and Platform Event sinks, and a legacy streaming source. Commercial support includes maintained releases and security patches under the published product policy."
+        ],
+        [
+          "ServiceNow | Source and sink",
+          "OSO-maintained, Apache 2.0. REST Table API ingestion and CRUD delivery. Commercial support includes configuration, recovery, API changes and maintained releases under the published product policy."
+        ],
+        [
+          "Debezium PostgreSQL | CDC source",
+          "Third-party support subject to assessment. Review snapshots, replication slots, WAL growth, offsets, failover and database prerequisites. Agree approved versions and the responsibility for code fixes and security backports."
+        ],
+        [
+          "Aiven HTTP | Sink",
+          "Third-party support subject to assessment. Sends records to HTTP endpoints using POST. Review authentication, payloads, batching, retries, rate limits and duplicate handling. The Aiven plugin does not provide an HTTP source."
+        ],
+        [
+          "Further integrations",
+          "HTTP sources, JDBC, Azure storage and other CDC families can be assessed. Select the implementation and verify its licence, dependencies and runtime before admission to the supported catalogue."
+        ]
+      ],
+      "note": "Published product policies define OSO release commitments. Upstream projects retain control of third-party releases."
+    },
+    {
+      "eyebrow": "02 / SUPPORT AND MAINTENANCE",
+      "title": "Specialists alongside your operations team",
+      "intro": "Your team keeps control of production. OSO supplies Kafka Connect expertise and agreed engineering assistance through a clear incident and escalation process.",
+      "sections": [
+        [
+          "A practical incident workflow",
+          "Your operations team monitors the service and performs initial triage. Raise a ticket through the agreed support channel, share redacted diagnostics securely, and join an incident call where needed. OSO investigates, proposes recovery actions and works with your team as it executes approved changes."
+        ],
+        [
+          "Technical and engineering support",
+          "L2 assistance covers configuration, logs, worker behaviour, tasks, offsets, throughput and recovery. L3 assistance covers deeper connector analysis and engineering within the agreed scope. Root cause reviews and service reporting can be included in the support schedule."
+        ],
+        [
+          "Security and lifecycle",
+          "For OSO products, supported releases and patch obligations follow the published security and support policies. For third-party and custom plugins, agree vulnerability triage, mitigation, dependency updates, release testing, backports and any maintained fork explicitly."
+        ],
+        [
+          "Coverage that fits the use case",
+          "Product subscriptions use their published support hours. Extended regional coverage, weekends, holidays and continuous 24-hour support can be arranged under a separate schedule. Define severity, response targets and escalation contacts against business impact."
+        ],
+        [
+          "Responsibilities and access",
+          "No standing production access is required for the standard remote model. The customer owns its infrastructure, source systems and production changes. Hands-on hypercare can be separately scoped. Initial response means acknowledgement and the start of investigation, not guaranteed restoration."
+        ]
+      ],
+      "note": "Platform support, connector support and code maintenance are recorded explicitly in the applicable agreement."
+    },
+    {
+      "eyebrow": "03 / PLATFORM AND DELIVERY",
+      "title": "Build a platform teams can use",
+      "intro": "Start with a working integration, establish operational controls, and turn the proven pattern into reusable services for other teams.",
+      "sections": [
+        [
+          "Architecture and implementation",
+          "Design Kafka Connect worker groups for workload and security isolation. Establish topic naming, access boundaries, resource sizing, internal state storage and recovery. Implement on Kubernetes with Strimzi, including AKS and Azure Event Hubs designs where appropriate."
+        ],
+        [
+          "GitOps and Backstage self-service",
+          "Package approved plugins and deploy through reviewed Argo CD workflows. Build Backstage templates for connector instances or worker groups, with ownership metadata, configuration validation and secret references. Agree approval gates and lifecycle actions with the platform team."
+        ],
+        [
+          "Integration and event contracts",
+          "Use representative source samples to define event contracts and transformations. Test schema changes, replay, rate limits, error handling, reconciliation and sink side effects. Synthetic workloads help validate behaviour before production rollout."
+        ],
+        [
+          "Custom connector engineering",
+          "Build JVM source or sink connectors for systems that lack a suitable plugin. Scope authentication, pagination or streaming, state handling, delivery semantics, testing, packaging and documentation. Agree source ownership and ongoing security maintenance alongside development."
+        ],
+        [
+          "Operational readiness and enablement",
+          "Prepare runbooks, monitoring and escalation paths. Rehearse failure and recovery scenarios, agree production acceptance criteria, and hand over the deployment pattern to your engineering and operations teams."
+        ]
+      ],
+      "note": "Delivery services are separately scoped. Capacity, system access, source readiness and acceptance criteria shape the delivery plan."
+    },
+    {
+      "eyebrow": "04 / ENGAGEMENT AND PORTABILITY",
+      "title": "Prove the first flow. Plan the next.",
+      "intro": "A short discovery and architecture review turns the service catalogue into a supported estate, delivery plan and operating agreement.",
+      "sections": [
+        [
+          "1. Review requirements and the estate",
+          "Confirm source and sink systems, versions, event rates, data sensitivity, regions, retention and business impact. Review the existing platform and agree which connectors and environments need support."
+        ],
+        [
+          "2. Validate the platform and first integration",
+          "Prove authentication, plugin packaging, worker recovery, offsets, retries and duplicate handling. For Azure Event Hubs, verify the required Kafka behaviour, compacted state hubs and namespace quotas with the actual versions and tier."
+        ],
+        [
+          "3. Agree support and production readiness",
+          "Record coverage, incident priorities, response clocks, escalation and change ownership. Define connector code-fix and security responsibilities. Establish a supported version window and the evidence required for production acceptance."
+        ],
+        [
+          "4. Expand through reusable patterns",
+          "Add approved connector families and self-service templates as use cases develop. Review capacity, isolation and operational outcomes as the supported estate grows."
+        ],
+        [
+          "Archive, replay and vendor portability",
+          "Long-term history needs a durable archive and a tested replay design. Assess object storage, capture and Kafka Backup against retention, access and recovery requirements. Rehearse restore and migration with plugin configuration, offsets, source cursors and sink side effects in mind."
+        ]
+      ],
+      "note": "Discuss your requirements: sales@oso.sh  |  oso.sh\nSource code and product policies: github.com/osodevops"
+    }
+  ]
+}
