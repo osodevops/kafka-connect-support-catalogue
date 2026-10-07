@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-07",
+  "support_offer": "OSO offers commercial support across all Debezium connector families and all Aiven Open Kafka Connect connectors listed here. Exact versions, runtimes, environments and engineering obligations are agreed in the support schedule.",
+  "oso_products": [
+    {
+      "name": "Salesforce",
+      "direction": "Source and sink",
+      "status": "Public OSO product",
+      "url": "https://github.com/osodevops/kafka-connect-salesforce-oss"
+    },
+    {
+      "name": "ServiceNow",
+      "direction": "Source and sink",
+      "status": "Public OSO product",
+      "url": "https://github.com/osodevops/kafka-connect-servicenow-oss"
+    },
+    {
+      "name": "Oracle Database CDC",
+      "direction": "Source",
+      "status": "Upcoming open-source release",
+      "url": null,
+      "notes": "Commercial support enquiries welcome; release profile and publication details to follow."
+    }
+  ],
+  "debezium": [
+    {
+      "id": "debezium-mongodb",
+      "name": "MongoDB",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium",
+      "upstream_status": "Documented connector family",
+      "notes": "Change streams, snapshots and resume tokens.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-mariadb",
+      "name": "MariaDB",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium",
+      "upstream_status": "Documented connector family",
+      "notes": "Binlog capture, snapshots and replication position.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-mysql",
+      "name": "MySQL",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium",
+      "upstream_status": "Documented connector family",
+      "notes": "Binlog capture, snapshots, GTIDs and recovery.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-postgresql",
+      "name": "PostgreSQL",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium",
+      "upstream_status": "Documented connector family",
+      "notes": "Logical decoding, replication slots, WAL and snapshots.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-sqlserver",
+      "name": "SQL Server",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium",
+      "upstream_status": "Documented connector family",
+      "notes": "SQL Server CDC prerequisites, change tables and snapshots.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-oracle",
+      "name": "Oracle",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium",
+      "upstream_status": "Documented connector family",
+      "notes": "Oracle capture configuration, snapshots and recovery; distinct from the upcoming OSO connector.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-db2",
+      "name": "IBM Db2",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-db2",
+      "upstream_status": "Documented connector family",
+      "notes": "Database-specific CDC prerequisites and source-side dependencies.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-cassandra",
+      "name": "Apache Cassandra",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-cassandra",
+      "upstream_status": "Documented connector family",
+      "notes": "Node-local JVM CDC adapter, not a Kafka Connect worker plugin; validate database/connector versions.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-vitess",
+      "name": "Vitess",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-vitess",
+      "upstream_status": "Incubating in upstream connector index",
+      "notes": "VStream capture and topology prerequisites.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-spanner",
+      "name": "Google Cloud Spanner",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-spanner",
+      "upstream_status": "Incubating in upstream connector index",
+      "notes": "Change streams, credentials and recovery.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-informix",
+      "name": "IBM Informix",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-informix",
+      "upstream_status": "Incubating in upstream connector index",
+      "notes": "Informix CDC prerequisites and database configuration.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-cockroachdb",
+      "name": "CockroachDB",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-cockroachdb",
+      "upstream_status": "Incubating in upstream connector index",
+      "notes": "Native changefeed configuration and source/recovery semantics.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-yashandb",
+      "name": "YashanDB",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-yashandb",
+      "upstream_status": "Incubating in upstream connector index",
+      "notes": "YStream and database/client dependencies.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-ingres",
+      "name": "Actian Ingres",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-ingres",
+      "upstream_status": "Incubating in upstream connector index",
+      "notes": "Upstream identifies missing features and production-readiness limitations.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-milvus",
+      "name": "Milvus",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-milvus",
+      "upstream_status": "Incubating in upstream connector index",
+      "notes": "Source capture from collections and message-queue channels; upstream describes early development.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-jdbc-sink",
+      "name": "JDBC",
+      "direction": "Sink",
+      "upstream": "https://github.com/debezium/debezium/tree/main/debezium-connector-jdbc",
+      "upstream_status": "Documented sink family",
+      "notes": "Apply change events to relational databases; validate driver and target semantics.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-mongodb-sink",
+      "name": "MongoDB",
+      "direction": "Sink",
+      "upstream": "https://github.com/debezium/debezium/blob/main/debezium-connector-mongodb/src/main/java/io/debezium/connector/mongodb/MongoDbSinkConnector.java",
+      "upstream_status": "Preview/version-specific",
+      "notes": "Writes relational Debezium change events to MongoDB; distinguish from the MongoDB source.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-ibmi",
+      "name": "IBM i (AS/400)",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-ibmi",
+      "upstream_status": "Incubating/development project",
+      "notes": "Journal-based CDC; check documented datatype, failover and journal-loss limitations.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-sqlite",
+      "name": "SQLite",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-sqlite",
+      "upstream_status": "Incubating/development project",
+      "notes": "Trigger/log-table CDC; upstream identifies active development.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-tidb",
+      "name": "TiDB",
+      "direction": "Source",
+      "upstream": "https://github.com/debezium/debezium-connector-tidb",
+      "upstream_status": "Incubating/development project",
+      "notes": "Incubating adapter for TiCDC changefeeds; validate current implementation and release availability.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "debezium-elasticsearch",
+      "name": "Elasticsearch",
+      "direction": "Sink",
+      "upstream": "https://github.com/debezium/debezium-connector-elasticsearch",
+      "upstream_status": "Incubating/development project",
+      "notes": "Incubating sink applying document writes/deletes; not an Elasticsearch CDC source.",
+      "licence": "Apache-2.0"
+    }
+  ],
+  "aiven_open": [
+    {
+      "id": "aiven-jdbc-source",
+      "name": "JDBC",
+      "direction": "Source",
+      "upstream": "https://github.com/Aiven-Open/jdbc-connector-for-apache-kafka",
+      "upstream_status": "Active upstream repository",
+      "notes": "Relational database polling over JDBC.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-jdbc-sink",
+      "name": "JDBC",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/jdbc-connector-for-apache-kafka",
+      "upstream_status": "Active upstream repository",
+      "notes": "Relational database writes over JDBC.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-http-sink",
+      "name": "HTTP",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/http-connector-for-apache-kafka",
+      "upstream_status": "Active upstream repository",
+      "notes": "POST delivery; authentication, batching and retries. No HTTP source in this project.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-elasticsearch-sink",
+      "name": "Elasticsearch",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/elasticsearch-connector-for-apache-kafka",
+      "upstream_status": "Active upstream repository",
+      "notes": "Index records in Elasticsearch.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-opensearch-sink",
+      "name": "OpenSearch",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/opensearch-connector-for-apache-kafka",
+      "upstream_status": "Active upstream repository",
+      "notes": "Index records in OpenSearch.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-bigquery-sink",
+      "name": "Google BigQuery",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/bigquery-connector-for-apache-kafka",
+      "upstream_status": "Active upstream repository",
+      "notes": "Write Kafka records to BigQuery.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-s3-sink",
+      "name": "Amazon S3",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/cloud-storage-connectors-for-apache-kafka/tree/main/s3-sink-connector",
+      "upstream_status": "Active upstream repository",
+      "notes": "Write records to S3 objects; current combined repository.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-s3-source",
+      "name": "Amazon S3",
+      "direction": "Source",
+      "upstream": "https://github.com/Aiven-Open/cloud-storage-connectors-for-apache-kafka/tree/main/s3-source-connector",
+      "upstream_status": "Active upstream repository",
+      "notes": "Read S3 objects into Kafka topics.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-gcs-sink",
+      "name": "Google Cloud Storage",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/cloud-storage-connectors-for-apache-kafka/tree/main/gcs-sink-connector",
+      "upstream_status": "Active upstream repository",
+      "notes": "Write records to GCS objects; current combined repository.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-azure-blob-sink",
+      "name": "Azure Blob Storage",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/cloud-storage-connectors-for-apache-kafka/tree/main/azure-sink-connector",
+      "upstream_status": "Active upstream repository",
+      "notes": "Write records to Azure Blob Storage.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-salesforce-source",
+      "name": "Salesforce",
+      "direction": "Source",
+      "upstream": "https://github.com/Aiven-Open/salesforce-connector-for-apache-kafka/tree/main/source",
+      "upstream_status": "Active upstream repository",
+      "notes": "Aiven Open implementation; separate from the OSO Salesforce suite.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-salesforce-sink",
+      "name": "Salesforce",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/salesforce-connector-for-apache-kafka/tree/main/sink",
+      "upstream_status": "Active upstream repository",
+      "notes": "Aiven Open implementation; separate from the OSO Salesforce suite.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-amqp-source",
+      "name": "AMQP",
+      "direction": "Source",
+      "upstream": "https://github.com/Aiven-Open/amqp-connector-for-apache-kafka",
+      "upstream_status": "Active upstream repository",
+      "notes": "Read from AMQP providers; current project documents a source connector.",
+      "licence": "Apache-2.0"
+    }
+  ],
+  "aiven_legacy": [
+    {
+      "id": "aiven-legacy-s3",
+      "name": "Amazon S3 (legacy standalone)",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/s3-connector-for-apache-kafka",
+      "upstream_status": "Archived legacy repository",
+      "notes": "Archived repository; current implementation is in cloud-storage-connectors-for-apache-kafka.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-legacy-gcs",
+      "name": "Google Cloud Storage (legacy standalone)",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/gcs-connector-for-apache-kafka",
+      "upstream_status": "Archived legacy repository",
+      "notes": "Archived repository; current implementation is in cloud-storage-connectors-for-apache-kafka.",
+      "licence": "Apache-2.0"
+    },
+    {
+      "id": "aiven-legacy-bigquery",
+      "name": "Google BigQuery (legacy fork)",
+      "direction": "Sink",
+      "upstream": "https://github.com/Aiven-Open/kafka-connect-bigquery",
+      "upstream_status": "Archived legacy repository",
+      "notes": "Archived/deprecated fork; current implementation is bigquery-connector-for-apache-kafka.",
+      "licence": "Apache-2.0"
+    }
+  ],
+  "upstream_tracking": [
+    {
+      "name": "Debezium Neo4j",
+      "url": "https://github.com/debezium/debezium-connector-neo4j",
+      "status": "Project scaffold only at verification",
+      "notes": "Repository currently contains only .gitignore and LICENSE. No runnable connector is listed as available."
+    }
+  ],
+  "related_aiven_components": [
+    {
+      "name": "Single Message Transformations",
+      "url": "https://github.com/Aiven-Open/transforms-for-apache-kafka-connect"
+    },
+    {
+      "name": "Kafka connector framework",
+      "url": "https://github.com/Aiven-Open/aiven-kafka-connector-framework"
+    },
+    {
+      "name": "Connector commons",
+      "url": "https://github.com/Aiven-Open/aiven-commons"
+    },
+    {
+      "name": "Kafka configuration utilities",
+      "url": "https://github.com/Aiven-Open/kafka-config"
+    },
+    {
+      "name": "Connector test kit",
+      "url": "https://github.com/Aiven-Open/kafka-testkit"
+    }
+  ],
+  "sources": [
+    "https://github.com/debezium/debezium/blob/main/documentation/modules/ROOT/pages/connectors/index.adoc",
+    "https://github.com/debezium/debezium/blob/main/documentation/modules/ROOT/pages/connectors/index-sink.adoc",
+    "https://github.com/debezium",
+    "https://github.com/Aiven-Open"
+  ]
+}

@@ -2,35 +2,35 @@
   "title": "Kafka Connect\nSupport and Services",
   "subtitle": "Connector engineering. Platform expertise.\nSupport that fits your operating model.",
   "date": "October 2026",
-  "version": "1.0",
+  "version": "1.1",
   "pages": [
     {
       "eyebrow": "01 / CONNECTOR CATALOGUE",
       "title": "Connectors with clear ownership",
-      "intro": "Choose a maintained OSO product or agree a support scope for a selected third-party connector. Each agreement records the plugin versions, environments and responsibilities.",
+      "intro": "OSO supports its own connectors, all Debezium connector families and all Aiven Open Kafka Connect implementations. Each agreement records versions, environments and engineering responsibilities.",
       "sections": [
         [
-          "Salesforce | Source and sink",
-          "OSO-maintained, Apache 2.0. Pub/Sub CDC and Platform Event ingestion, Bulk API backfill, SObject and Platform Event sinks, and a legacy streaming source. Commercial support includes maintained releases and security patches under the published product policy."
+          "Salesforce and ServiceNow | Sources and sinks",
+          "OSO-maintained, Apache 2.0. Salesforce covers Pub/Sub CDC, Platform Events, Bulk API backfill and sink integrations. ServiceNow covers REST Table API ingestion and CRUD delivery. Published product policies define maintained releases and security obligations."
         ],
         [
-          "ServiceNow | Source and sink",
-          "OSO-maintained, Apache 2.0. REST Table API ingestion and CRUD delivery. Commercial support includes configuration, recovery, API changes and maintained releases under the published product policy."
+          "Oracle Database CDC | Upcoming OSO source",
+          "An OSO Oracle Database CDC connector is being prepared for open-source release. Contact OSO for support and adoption planning. Public release details and the supported deployment profile will be published with the connector."
         ],
         [
-          "Debezium PostgreSQL | CDC source",
-          "Third-party support subject to assessment. Review snapshots, replication slots, WAL growth, offsets, failover and database prerequisites. Agree approved versions and the responsibility for code fixes and security backports."
+          "All Debezium connector families",
+          "Commercial support covers documented source and sink families and incubating connector projects. This includes relational, document, distributed and vector database integrations. Assess snapshots, capture prerequisites, offsets and recovery against the exact release; maturity differs between projects."
         ],
         [
-          "Aiven HTTP | Sink",
-          "Third-party support subject to assessment. Sends records to HTTP endpoints using POST. Review authentication, payloads, batching, retries, rate limits and duplicate handling. The Aiven plugin does not provide an HTTP source."
+          "All Aiven Open Kafka Connect connectors",
+          "Commercial support covers JDBC sources/sinks, HTTP, Elasticsearch, OpenSearch, BigQuery, S3 source/sink, GCS, Azure Blob Storage, Salesforce sources/sinks and AMQP source. Existing legacy S3, GCS and BigQuery deployments can also be supported with an agreed maintenance and migration route."
         ],
         [
-          "Further integrations",
-          "HTTP sources, JDBC, Azure storage and other CDC families can be assessed. Select the implementation and verify its licence, dependencies and runtime before admission to the supported catalogue."
+          "Full connector inventory and support scope",
+          "Every connector is listed with direction, upstream link and maturity in the public GitHub catalogue. Third-party engineering and security-maintenance responsibilities are agreed explicitly. Support is delivered by OSO, independently of an upstream managed-service subscription."
         ]
       ],
-      "note": "Published product policies define OSO release commitments. Upstream projects retain control of third-party releases."
+      "note": "Full inventory: github.com/osodevops/kafka-connect-support-catalogue\nIncubating, archived and upcoming projects are labelled in the catalogue."
     },
     {
       "eyebrow": "02 / SUPPORT AND MAINTENANCE",

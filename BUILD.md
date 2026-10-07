@@ -1,6 +1,6 @@
 # Build the service overview
 
-The public PDF contains generic OSO service information. Its editable source is `docs/service-overview.json`; the README contains the web-readable catalogue.
+The public PDF contains generic OSO service information. Its editable source is `docs/service-overview.json`; the README contains the web-readable catalogue, backed by `docs/connector-catalogue.json`.
 
 ## Regenerate
 

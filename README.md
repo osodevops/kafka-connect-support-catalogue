@@ -4,7 +4,7 @@ Commercial connector support and engineering services from OSO.
 
 **[Download the OSO service overview (PDF)](output/pdf/OSO_Kafka_Connect_Support_and_Services.pdf)**
 
-We build and maintain Kafka Connect products, support selected third-party integrations, and help teams deliver an event platform with clear operational ownership. This catalogue describes available services. Your support agreement names the approved versions, environments, coverage and engineering responsibilities.
+We build and maintain Kafka Connect products, support all Debezium connector families and Aiven Open Kafka Connect implementations, and help teams deliver an event platform with clear operational ownership. This catalogue describes available services. Your support agreement names the approved versions, environments, coverage and engineering responsibilities.
 
 ## OSO-maintained connectors
 
@@ -12,21 +12,87 @@ We build and maintain Kafka Connect products, support selected third-party integ
 |---|---|---|---|
 | Salesforce | Source and sink | Pub/Sub CDC and Platform Events, Bulk API backfill, SObject and Platform Event sinks, legacy streaming source | [Source](https://github.com/osodevops/kafka-connect-salesforce-oss), [support](https://github.com/osodevops/kafka-connect-salesforce-oss/blob/main/SUPPORT.md), [security](https://github.com/osodevops/kafka-connect-salesforce-oss/blob/main/SECURITY.md) |
 | ServiceNow | Source and sink | REST Table API ingestion and CRUD delivery | [Source](https://github.com/osodevops/kafka-connect-servicenow-oss), [support](https://github.com/osodevops/kafka-connect-servicenow-oss/blob/main/SUPPORT.md), [security](https://github.com/osodevops/kafka-connect-servicenow-oss/blob/main/SECURITY.md) |
+| Oracle Database CDC | Source | Upcoming OSO open-source connector. Release profile and publication details to follow. | Open-source release forthcoming; [contact OSO](mailto:sales@oso.sh) |
 
-Both products are Apache 2.0 licensed. Commercial support includes maintained releases and the security obligations in the linked product policies. Kafka Connect platform support is a separate service.
+The published Salesforce and ServiceNow products are Apache 2.0 licensed. Oracle is listed as upcoming until its public release. Commercial support includes maintained releases and the security obligations in the linked product policies. Kafka Connect platform support is a separate service.
 
 ## Third-party connectors
 
-We assess the plugin, licence, dependencies and deployment before including a third-party connector in a support schedule.
+**OSO offers commercial support across all Debezium connector families and all Aiven Open Kafka Connect connectors listed below.** Onboarding records the exact plugin versions, licences, dependencies, runtimes, source/target systems and environments. The support schedule states code remediation, backports and any maintained-fork obligations.
 
-| Integration | Direction | Upstream | Assessment focus |
-|---|---|---|---|
-| Debezium PostgreSQL | CDC source | [Debezium](https://github.com/debezium/debezium), Apache 2.0 | Snapshots, replication slots, WAL, offsets, failover and recovery |
-| Aiven HTTP | Sink | [Aiven Open](https://github.com/Aiven-Open/http-connector-for-apache-kafka), Apache 2.0 | POST payloads, authentication, batching, retries, rate limits and duplicate delivery |
-| HTTP ingestion | Source | Plugin selected during assessment | API polling or webhooks, authentication, pagination and incremental capture |
-| JDBC, Azure storage and other CDC families | Source or sink as selected | Plugin selected during assessment | Exact implementation, licence, runtime and source-system prerequisites |
+### Debezium
 
-Third-party support can cover installation, configuration, incident diagnosis, recovery and upstream coordination. Code remediation, security backports and a maintained fork must be explicitly agreed. Upstream projects control their own releases. Aiven's HTTP plugin is a sink, not a source.
+The list includes the upstream documented source/sink families and additional connector projects maintained under the Debezium organisation. Upstream maturity is shown separately from OSO's support availability. Incubating and development implementations require a release-specific production-readiness decision.
+
+| Connector | Direction | Upstream | Upstream status | Notes |
+|---|---|---|---|---|
+| MongoDB | Source | [Source](https://github.com/debezium/debezium) | Documented connector family | Change streams, snapshots and resume tokens. |
+| MariaDB | Source | [Source](https://github.com/debezium/debezium) | Documented connector family | Binlog capture, snapshots and replication position. |
+| MySQL | Source | [Source](https://github.com/debezium/debezium) | Documented connector family | Binlog capture, snapshots, GTIDs and recovery. |
+| PostgreSQL | Source | [Source](https://github.com/debezium/debezium) | Documented connector family | Logical decoding, replication slots, WAL and snapshots. |
+| SQL Server | Source | [Source](https://github.com/debezium/debezium) | Documented connector family | SQL Server CDC prerequisites, change tables and snapshots. |
+| Oracle | Source | [Source](https://github.com/debezium/debezium) | Documented connector family | Oracle capture configuration, snapshots and recovery; distinct from the upcoming OSO connector. |
+| IBM Db2 | Source | [Source](https://github.com/debezium/debezium-connector-db2) | Documented connector family | Database-specific CDC prerequisites and source-side dependencies. |
+| Apache Cassandra | Source | [Source](https://github.com/debezium/debezium-connector-cassandra) | Documented connector family | Node-local JVM CDC adapter, not a Kafka Connect worker plugin; validate database/connector versions. |
+| Vitess | Source | [Source](https://github.com/debezium/debezium-connector-vitess) | Incubating in upstream connector index | VStream capture and topology prerequisites. |
+| Google Cloud Spanner | Source | [Source](https://github.com/debezium/debezium-connector-spanner) | Incubating in upstream connector index | Change streams, credentials and recovery. |
+| IBM Informix | Source | [Source](https://github.com/debezium/debezium-connector-informix) | Incubating in upstream connector index | Informix CDC prerequisites and database configuration. |
+| CockroachDB | Source | [Source](https://github.com/debezium/debezium-connector-cockroachdb) | Incubating in upstream connector index | Native changefeed configuration and source/recovery semantics. |
+| YashanDB | Source | [Source](https://github.com/debezium/debezium-connector-yashandb) | Incubating in upstream connector index | YStream and database/client dependencies. |
+| Actian Ingres | Source | [Source](https://github.com/debezium/debezium-connector-ingres) | Incubating in upstream connector index | Upstream identifies missing features and production-readiness limitations. |
+| Milvus | Source | [Source](https://github.com/debezium/debezium-connector-milvus) | Incubating in upstream connector index | Source capture from collections and message-queue channels; upstream describes early development. |
+| JDBC | Sink | [Source](https://github.com/debezium/debezium/tree/main/debezium-connector-jdbc) | Documented sink family | Apply change events to relational databases; validate driver and target semantics. |
+| MongoDB | Sink | [Source](https://github.com/debezium/debezium/blob/main/debezium-connector-mongodb/src/main/java/io/debezium/connector/mongodb/MongoDbSinkConnector.java) | Preview/version-specific | Writes relational Debezium change events to MongoDB; distinguish from the MongoDB source. |
+| IBM i (AS/400) | Source | [Source](https://github.com/debezium/debezium-connector-ibmi) | Incubating/development project | Journal-based CDC; check documented datatype, failover and journal-loss limitations. |
+| SQLite | Source | [Source](https://github.com/debezium/debezium-connector-sqlite) | Incubating/development project | Trigger/log-table CDC; upstream identifies active development. |
+| TiDB | Source | [Source](https://github.com/debezium/debezium-connector-tidb) | Incubating/development project | Incubating adapter for TiCDC changefeeds; validate current implementation and release availability. |
+| Elasticsearch | Sink | [Source](https://github.com/debezium/debezium-connector-elasticsearch) | Incubating/development project | Incubating sink applying document writes/deletes; not an Elasticsearch CDC source. |
+
+All listed Debezium projects use Apache 2.0 for their connector code. Database drivers, capture agents and other dependencies may have separate licence or installation requirements. Cassandra is a node-local adapter rather than a Kafka Connect worker plugin.
+
+**Upstream project tracking:** [Debezium Neo4j](https://github.com/debezium/debezium-connector-neo4j) currently contains a project scaffold only. It is tracked for future coverage; there is no runnable connector to deploy at the verification date.
+
+### Aiven Open
+
+These are Aiven's open-source Kafka Connect implementations. OSO support is provided by OSO for the agreed deployment and does not require buying Aiven's managed Kafka service or imply Aiven provides the support.
+
+| Connector | Direction | Upstream | Upstream status | Notes |
+|---|---|---|---|---|
+| JDBC | Source | [Source](https://github.com/Aiven-Open/jdbc-connector-for-apache-kafka) | Active upstream repository | Relational database polling over JDBC. |
+| JDBC | Sink | [Source](https://github.com/Aiven-Open/jdbc-connector-for-apache-kafka) | Active upstream repository | Relational database writes over JDBC. |
+| HTTP | Sink | [Source](https://github.com/Aiven-Open/http-connector-for-apache-kafka) | Active upstream repository | POST delivery; authentication, batching and retries. No HTTP source in this project. |
+| Elasticsearch | Sink | [Source](https://github.com/Aiven-Open/elasticsearch-connector-for-apache-kafka) | Active upstream repository | Index records in Elasticsearch. |
+| OpenSearch | Sink | [Source](https://github.com/Aiven-Open/opensearch-connector-for-apache-kafka) | Active upstream repository | Index records in OpenSearch. |
+| Google BigQuery | Sink | [Source](https://github.com/Aiven-Open/bigquery-connector-for-apache-kafka) | Active upstream repository | Write Kafka records to BigQuery. |
+| Amazon S3 | Sink | [Source](https://github.com/Aiven-Open/cloud-storage-connectors-for-apache-kafka/tree/main/s3-sink-connector) | Active upstream repository | Write records to S3 objects; current combined repository. |
+| Amazon S3 | Source | [Source](https://github.com/Aiven-Open/cloud-storage-connectors-for-apache-kafka/tree/main/s3-source-connector) | Active upstream repository | Read S3 objects into Kafka topics. |
+| Google Cloud Storage | Sink | [Source](https://github.com/Aiven-Open/cloud-storage-connectors-for-apache-kafka/tree/main/gcs-sink-connector) | Active upstream repository | Write records to GCS objects; current combined repository. |
+| Azure Blob Storage | Sink | [Source](https://github.com/Aiven-Open/cloud-storage-connectors-for-apache-kafka/tree/main/azure-sink-connector) | Active upstream repository | Write records to Azure Blob Storage. |
+| Salesforce | Source | [Source](https://github.com/Aiven-Open/salesforce-connector-for-apache-kafka/tree/main/source) | Active upstream repository | Aiven Open implementation; separate from the OSO Salesforce suite. |
+| Salesforce | Sink | [Source](https://github.com/Aiven-Open/salesforce-connector-for-apache-kafka/tree/main/sink) | Active upstream repository | Aiven Open implementation; separate from the OSO Salesforce suite. |
+| AMQP | Source | [Source](https://github.com/Aiven-Open/amqp-connector-for-apache-kafka) | Active upstream repository | Read from AMQP providers; current project documents a source connector. |
+
+All listed Aiven Open connector projects use Apache 2.0. The cloud storage connectors share a repository; each source/sink implementation is listed separately above. Aiven HTTP is a sink. AMQP currently provides a source.
+
+### Aiven legacy repositories
+
+OSO can support existing deployments of these legacy implementations, with the maintained artifact and upgrade/migration route recorded in the schedule. Archived upstream repositories do not receive new releases there.
+
+| Connector | Direction | Upstream | Upstream status | Notes |
+|---|---|---|---|---|
+| Amazon S3 (legacy standalone) | Sink | [Source](https://github.com/Aiven-Open/s3-connector-for-apache-kafka) | Archived legacy repository | Archived repository; current implementation is in cloud-storage-connectors-for-apache-kafka. |
+| Google Cloud Storage (legacy standalone) | Sink | [Source](https://github.com/Aiven-Open/gcs-connector-for-apache-kafka) | Archived legacy repository | Archived repository; current implementation is in cloud-storage-connectors-for-apache-kafka. |
+| Google BigQuery (legacy fork) | Sink | [Source](https://github.com/Aiven-Open/kafka-connect-bigquery) | Archived legacy repository | Archived/deprecated fork; current implementation is bigquery-connector-for-apache-kafka. |
+
+### Related connector components
+
+We also cover associated [Aiven SMTs](https://github.com/Aiven-Open/transforms-for-apache-kafka-connect) and can include connector framework, commons, configuration utilities and test-kit issues as part of an agreed connector engineering scope. These are supporting components, not additional source/sink connectors. Aiven's Flink connectors and general database/backup tools are separate products outside this Kafka Connect inventory.
+
+### Further connector development
+
+HTTP sources and other integrations can be scoped where a suitable supported plugin is needed. API polling and webhook receivers have different requirements. Third-party incident support includes configuration, diagnosis, recovery and upstream coordination; code remediation, security backports and a maintained fork are recorded explicitly. Upstream projects control their own releases.
+
+**Inventory checked:** 7 October 2026 against upstream documentation, repository READMEs, connector implementations and repository archive flags. [Machine-readable catalogue](docs/connector-catalogue.json). New upstream additions are reviewed and added to this list.
 
 ## Platform and delivery services
 
