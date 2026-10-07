@@ -12,7 +12,7 @@ We build and maintain Kafka Connect products, support all Debezium connector fam
 |---|---|---|---|
 | Salesforce | Source and sink | Pub/Sub CDC and Platform Events, Bulk API backfill, SObject and Platform Event sinks, legacy streaming source | [Source](https://github.com/osodevops/kafka-connect-salesforce-oss), [support](https://github.com/osodevops/kafka-connect-salesforce-oss/blob/main/SUPPORT.md), [security](https://github.com/osodevops/kafka-connect-salesforce-oss/blob/main/SECURITY.md) |
 | ServiceNow | Source and sink | REST Table API ingestion and CRUD delivery | [Source](https://github.com/osodevops/kafka-connect-servicenow-oss), [support](https://github.com/osodevops/kafka-connect-servicenow-oss/blob/main/SUPPORT.md), [security](https://github.com/osodevops/kafka-connect-servicenow-oss/blob/main/SECURITY.md) |
-| Oracle Database CDC | Source | Upcoming OSO open-source connector. Release profile and publication details to follow. | Open-source release forthcoming; [contact OSO](mailto:sales@oso.sh) |
+| Oracle Database CDC | Source | Upcoming OSO open-source connector. Release profile and publication details to follow. | Open-source release forthcoming; [contact OSO](https://oso.sh) |
 
 The published Salesforce and ServiceNow products are Apache 2.0 licensed. Oracle is listed as upcoming until its public release. Commercial support includes maintained releases and the security obligations in the linked product policies. Kafka Connect platform support is a separate service.
 
@@ -119,7 +119,6 @@ We begin with a requirements and architecture review, agree the supported estate
 
 ## Contact
 
-- Commercial enquiries: [sales@oso.sh](mailto:sales@oso.sh)
 - Website: [oso.sh](https://oso.sh)
 - Book a discussion: [Sion Smith](https://meetings-eu1.hubspot.com/sion-smith)
 

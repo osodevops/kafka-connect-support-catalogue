@@ -114,7 +114,7 @@
           "Long-term history needs a durable archive and a tested replay design. Assess object storage, capture and Kafka Backup against retention, access and recovery requirements. Rehearse restore and migration with plugin configuration, offsets, source cursors and sink side effects in mind."
         ]
       ],
-      "note": "Discuss your requirements: sales@oso.sh  |  oso.sh\nSource code and product policies: github.com/osodevops"
+      "note": "Discuss your requirements: oso.sh\nSource code and product policies: github.com/osodevops"
     }
   ]
 }
